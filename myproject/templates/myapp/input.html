@@ -2,7 +2,32 @@
 <html>
 
 <head>
-    <title>Input Sentence</title>
+    <title>Inpu
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+            <title>Display Entities</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                }
+
+                /* Add more styles here */
+            </style>
+        </head>
+
+<body>
+    <p>Original Sentence: {{ sentence }}</p>
+    <ul>
+        {% for entity in entities %}
+        <li>{{ entity.text }} - {{ entity.label }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>t Sentence</title>
 </head>
 
 <body>

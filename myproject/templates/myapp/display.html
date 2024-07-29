@@ -3,15 +3,136 @@
 
 <head>
     <title>Display Entities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f5f5, #d4ebeb);
+            background-image: url('https://www.transparenttextures.com/patterns/white-paper.png');
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header,
+        footer {
+            background-color: #00796b;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            margin: 20px auto;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li:hover {
+            background-color: #e0f7fa;
+            color: #00796b;
+            transform: scale(1.05);
+        }
+
+        .entity-label {
+            color: #4CAF50;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            ul {
+                grid-template-columns: 1fr;
+            }
+
+            li {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <p>Original Sentence: {{ sentence }}</p>
-    <ul>
-        {% for entity in entities %}
-        <li>{{ entity.text }} - {{ entity.label }}</li>
-        {% endfor %}
-    </ul>
+    <header>
+        <h1>Indian Location Extractor</h1>
+    </header>
+
+    <div class="container">
+        <h2>Original Text</h2>
+        <h3>{{sentence}}</h3>
+
+        <h2>Extracted Entities</h2>
+        <ul>
+            {% for entity in entities %}
+            <li>{{ entity.text }} - <span class="entity-label">{{ entity.label }}</span> <i
+                    class="fas fa-info-circle"></i></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Entity Extractor. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

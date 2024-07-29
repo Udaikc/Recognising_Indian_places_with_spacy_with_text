@@ -7,9 +7,6 @@ from spacy import displacy
 # Load SpaCy English model
 nlp = spacy.load("en_core_web_sm")
 
-# Define regex patterns with flexibility for customization
-location_pattern = r"\b\w*(pura|pur|kode|puram|giri|ool|luru|halli|nagar|nagara|ssan|Goa|Udupi|bad|kesh|sthan)\b"
-city_pattern = r"\b(Surat|Patna|Bangalore|Mysore|Kolkata|Kochi)\b"
 
 # Create your views here.
 from django.shortcuts import render
@@ -26,7 +23,7 @@ from spacy.util import filter_spans
 nlp = spacy.load("en_core_web_sm")
 
 # Define regex patterns with flexibility for customization
-location_pattern = r"\b\w*(pura|pur|kode|puram|giri|ool|luru|halli|nagar|nagara|ssan|Goa|Udupi|bad|kesh|sthan)\b"
+location_pattern = r"\b\w*(pura|pur|kode|puram|giri|ool|luru|halli|nagar|nagara|ssan|Goa|Udupi|bad|kesh|sthan|bagh|mangala)\b"
 city_pattern = r"\b(Surat|Patna|Bangalore|Mysore|Kolkata|Kochi)\b"
 
 def input_form(request):
