@@ -19,6 +19,6 @@ from django.urls import path
 from myapp.views import *
 
 urlpatterns = [
-    path('input/', input_form, name='input_form'),
+    path('input/', process_text, name='input_form'),
 ]
 
