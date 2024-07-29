@@ -3,6 +3,9 @@ import spacy
 from spacy.tokens import Span
 from spacy.util import filter_spans
 from spacy import displacy
+
+# Load SpaCy English model
+nlp = spacy.load("en_core_web_sm")
 # Create your views here.
 from django.shortcuts import render
 from .forms import SentenceForm
