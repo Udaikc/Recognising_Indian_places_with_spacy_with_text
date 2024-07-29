@@ -2,11 +2,16 @@
 <html>
 
 <head>
-    <title>Displayed Sentence</title>
+    <title>Display Entities</title>
 </head>
 
 <body>
-    <p>{{ sentence }}</p>
+    <p>Original Sentence: {{ sentence }}</p>
+    <ul>
+        {% for entity in entities %}
+        <li>{{ entity.text }} - {{ entity.label }}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
